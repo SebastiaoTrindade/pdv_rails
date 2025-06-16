@@ -1,3 +1,56 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-card{
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 420px;
+}
+
+.login-card h2{
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #2c5364;
+    text-align: center;
+}
+
+.form-control{
+    border-radius: 10px;
+}
+
+.btn-primary{
+    border-radius: 10px;
+    background-color: #2c5364;
+    border: none;
+}
+
+.btn-primary:hover{
+    background-color: #203a43;
+}
+
+.form-check-label{
+    font-size: 0.9rem;
+}
+
+.footer-link{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.footer-link a{
+    color: #2c5364;
+    text-decoration: none;
+}
+
+.footer-link a:hover{
+    text-decoration: underline;
+}
