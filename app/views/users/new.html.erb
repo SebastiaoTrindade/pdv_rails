@@ -1,0 +1,56 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow rounded-4">
+        <div class="card-body">
+          <h3 class="card-title text-center text-primary mb-4">Cadastro de Usuário</h3>
+
+          <%= form_with model: @user, url: users_path, local: true do |form| %>
+            <div class="mb-3">
+              <%= form.label :nome, "Nome completo", class: "form-label" %>
+              <%= form.text_field :nome, class: "form-control", required: true %>
+            </div>
+
+            <div class="mb-3">
+              <%= form.label :email, "E-mail", class: "form-label" %>
+              <%= form.email_field :email, class: "form-control", required: true %>
+            </div>
+
+            <div class="mb-3">
+              <%= form.label :tipo, "Tipo de usuário", class: "form-label" %>
+              <%= form.select :tipo, [['Administrador', 'administrador'], ['Funcionário', 'funcionario']], {}, class: "form-control", required: true %>
+            </div>
+
+            <div class="mb-3">
+              <%= form.label :password, "Senha", class: "form-label" %>
+              <%= form.password_field :password, class: "form-control", required: true %>
+            </div>
+
+            <div class="mb-3">
+              <%= form.label :password_confirmation, "Confirme a senha", class: "form-label" %>
+              <%= form.password_field :password_confirmation, class: "form-control", required: true %>
+            </div>
+
+            <div class="d-grid">
+              <%= form.submit "Cadastrar", class: "btn btn-success" %>
+            </div>
+          <% end %>
+
+          <div class="text-center mt-3">
+            <%= link_to "Já tenho uma conta", login_path, class: "text-decoration-none" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% if @user.errors.any? %>
+  <div class="alert alert-danger mt-3">
+    <h4 class="alert-heading">Erros ao cadastrar usuário</h4>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

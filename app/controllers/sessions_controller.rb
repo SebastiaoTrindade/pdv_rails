@@ -4,12 +4,13 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
+    
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to root_path, notice: 'Bem vindo, #{user.nome}!'
     else
       flash.now[:alert] = 'Email ou senha inválidos.'
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

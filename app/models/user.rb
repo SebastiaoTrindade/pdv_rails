@@ -3,5 +3,5 @@ class User < ApplicationRecord
 
   validates :nome, presence: true
   validates :email, presence: true, uniqueness: true
-  validates :tipo, presence: true, inclusion: { in: ['administrador', 'funcionario'] }
+  validates :tipo, presence: true, inclusion: { in: ['administrador', 'funcionario'], message: 'Tipo de usuário inválido' }
 end
