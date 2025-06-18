@@ -1,6 +1,6 @@
 body{
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,6 +39,15 @@ body{
 
 .form-check-label{
     font-size: 0.9rem;
+}
+
+a {
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
 }
 
 .footer-link{
