@@ -1,0 +1,13 @@
+.sidebar{
+    width: 240px;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.content{
+    margin-left: 240px;    
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}

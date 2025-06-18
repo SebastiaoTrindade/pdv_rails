@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   # Root Section
   root 'sessions#new'
 
@@ -10,6 +11,9 @@ Rails.application.routes.draw do
   # Cadastro Users
   get 'cadastro', to: 'users#new', as: 'new_user'
   post 'usuarios', to: 'users#create', as: 'users'
+
+  # Dashboard
+  get 'dashboard', to: 'dashboard#index', as: 'dashboard'
  
   
 end

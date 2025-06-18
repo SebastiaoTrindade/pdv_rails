@@ -36,7 +36,10 @@
             <div class="d-grid">
                 <%= form.submit "Entrar", class: "btn btn-primary btn-block" %>
             </div>
-        <% end %>        
+        <% end %>  
+        <div class="text-center mt-3">
+            <p>Não tem uma conta? <%= link_to "Registrar", new_user_path, class: "text-decoration-none" %></p>
+        </div>      
     </div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-  before_action :require_login
+  before_action :require_login, except: [:new, :create]
   
   def new
   end
@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path, notice: 'Bem vindo, #{user.nome}!'
+      redirect_to dashboard_path, notice: 'Bem vindo, #{user.nome}!'
     else
       flash.now[:alert] = 'Email ou senha inválidos.'
       render :new, status: :unprocessable_entity
